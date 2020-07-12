@@ -1,8 +1,8 @@
 {
   "name": "Liquify",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "factorio_version": "0.18",
-  "title": "Liquify 2: Electric Boogaloo",
+  "title": "Liquify 3: Mining Edition",
   "author": "Quezler",
   "dependencies": [
     "? base",

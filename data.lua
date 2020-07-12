@@ -3,8 +3,6 @@ liquify2 = {}
 
 --
 
-local steam = data.raw["fluid"]["steam"];
-local water = data.raw["fluid"]["water"];
 local order = 97 -- ascii a
 
 --
@@ -51,7 +49,7 @@ function liquify2.create(item, color, volume)
                     tint = color_light
                 },
                 {
-                    icon ="__Liquify__/graphics/icons/bottle-fill-top-mask.png",
+                    icon = "__Liquify__/graphics/icons/bottle-fill-top-mask.png",
                     icon_size = 32,
                     tint = color_light
                 },
@@ -71,34 +69,17 @@ function liquify2.create(item, color, volume)
             order = "[liquify]" .. string.char(order),
             icons = {
                 {
-                    icon = "__Liquify__/graphics/icons/bottle-fill.png",
-                    icon_size = 32
-                },
-                {
-                    icon = "__Liquify__/graphics/icons/bottle-fill-side-mask.png",
-                    icon_size = 32,
-                    tint = color_light
-                },
-                {
-                    icon ="__Liquify__/graphics/icons/bottle-fill-top-mask.png",
-                    icon_size = 32,
-                    tint = color_light
-                },
-                {
                     icon = item.icon,
                     icon_size = item.icon_size,
-                    scale = 16.0 / item.icon_size,
-                    shift = {8, -8}
                 },
             },
             subgroup = "liquify2-liquification",
-            category = "chemistry",
-            energy_required = 0.5,
+            category = "liquify2",
+            energy_required = 0.1,
             enabled = true,
             ingredients =
             {
                 {type="item",  name=item.name , amount= 1 },
-                {type="fluid", name=steam.name, amount= 1 * volume }
             },
             results =
             {
@@ -106,10 +87,7 @@ function liquify2.create(item, color, volume)
             },
             always_show_products = true,
             crafting_machine_tint = {
-                primary    = color_dark,
-                secondary  = steam.base_color,
-                tertiary   = color_light,
-                quaternary = steam.flow_color,
+                primary = color_light,
             },
             localised_name = {"recipe-name.liquify2-liquification", item.localised_name or {"item-name." .. item.name}},
             hide_from_player_crafting = true,
@@ -143,7 +121,7 @@ function liquify2.create(item, color, volume)
                     shift = {8, 8}
                 },
             },
-            energy_required = 0.5,
+            energy_required = 0.1,
             enabled = true,
             ingredients =
             {
@@ -152,14 +130,13 @@ function liquify2.create(item, color, volume)
             results =
             {
                 {type="item",  name=item.name , amount= 1 },
-                {type="fluid", name=water.name, amount= 1 * volume }
             },
             always_show_products = true,
             crafting_machine_tint = {
                 primary    = color_dark,
-                secondary  = steam.base_color,
+                secondary  = color_light,
                 tertiary   = color_light,
-                quaternary = steam.flow_color,
+                quaternary = color_dark,
             },
             localised_name = {"recipe-name.liquify2-solidification", item.localised_name or {"item-name." .. item.name}},
             hide_from_player_crafting = true,
@@ -168,3 +145,5 @@ function liquify2.create(item, color, volume)
     });
     order = order + 1;
 end
+
+require('prototypes/liquifier')
