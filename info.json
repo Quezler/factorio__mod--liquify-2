@@ -1,6 +1,6 @@
 {
   "name": "Liquify",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "factorio_version": "0.18",
   "title": "Liquify 3: Mining Edition",
   "author": "Quezler",
@@ -12,7 +12,8 @@
     "! BottledFluids",
     "! LiquifyRawMaterials",
     "! LiquifyIntermediates",
-    "! LiquifyScienceandLab"
+    "! LiquifyScienceandLab",
+    "? Bottleneck"
   ],
   "description": "Allows you to liquify items for easy transportation, modding api available! (^-^)"
 }
